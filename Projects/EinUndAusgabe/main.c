@@ -17,8 +17,8 @@ void einundausgabe_a1_b() {
     char result = 0;
     while (continueloop == 1) {
         printf("Moechten Sie weitermachen?(Y/N)\n");
-        scanf_s(" %c", &result, 1);
-
+        scanf(" %c", &result);
+        fflush(stdin);
         switch (tolower(result)) {
             case 'n':
                 continueloop = 0;

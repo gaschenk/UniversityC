@@ -5,11 +5,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void getStringFromStdIn(char *outString) {
     char string[32];
-    scanf_s("\n%[^\n]s", &string, 32);
-    strcpy_s(outString, 32, string);
+    fgets(string, 32, stdin);
+    strcpy(outString, string);
 }
 
 struct Student {
@@ -22,16 +23,16 @@ struct Student {
 void getStudentGender(char genderKey, char *out) {
     switch (tolower(genderKey)) {
         case 'm':
-            strcpy_s(out, 32, "maennlich");
+            strcpy(out, "maennlich");
             break;
         case 'w':
-            strcpy_s(out, 32, "weiblich");
+            strcpy(out, "weiblich");
             break;
         case 'd':
-            strcpy_s(out, 32, "divers");
+            strcpy(out, "divers");
             break;
         default:
-            strcpy_s(out, 32, "Unknown");
+            strcpy(out, "Unknown");
     }
 }
 
@@ -40,14 +41,21 @@ void fillStudentByInput(struct Student *student) {
     getStringFromStdIn(student->Name);
     printf("Geben Sie ihr Geschlecht(m/w/d) an:\n");
     char genderKey;
-    scanf_s(" %c", &genderKey, 1);
+    scanf(" %c", &genderKey);
+    fflush(stdin);
     getStudentGender(genderKey, student->Geschlecht);
 
     printf("Geben Sie die Studiengang an:\n");
     getStringFromStdIn(student->Studiengang);
 
     printf("Geben Sie die MatrikelNummer an:\n");
-    scanf_s("\n%d", &student->MatrikelNummer);
+    char matrikelNummer[6];
+    fgets(matrikelNummer, 6, stdin);
+    student->MatrikelNummer = atoi(matrikelNummer);
+
+    // Remove Trailing Whitespaces.
+    student->Studiengang[strcspn(student->Studiengang, "\n")] = 0;
+    student->Name[strcspn(student->Name, "\n")] = 0;
 }
 
 void outputStudentInformation(struct Student *student) {

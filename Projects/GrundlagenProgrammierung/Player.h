@@ -14,8 +14,8 @@ struct Player {
 void fillPlayerByInput(struct Player *player) {
     printf("Geben Sie den Namen an:\n");
     char name[32];
-    scanf_s("%s", &name, 32);
-    strcpy_s(player->Name, 32, name);
+    scanf("\n%31[0-9a-zA-Z ]s\n", &name);
+    strcpy(player->Name, name);
     printf("Geben Sie das Alter an:\n");
-    scanf_s("%d", &(player->Age));
+    scanf("%d", &(player->Age));
 }

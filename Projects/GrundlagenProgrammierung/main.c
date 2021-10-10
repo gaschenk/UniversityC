@@ -29,11 +29,11 @@ int main() {
     grundlagen_programmierung_a1();
     int step, start, end;
     printf("Geben Sie den Startwert ein:\n");
-    scanf_s("%d", &start);
+    scanf("%d", &start);
     printf("Geben Sie den Endwert ein:\n");
-    scanf_s("%d", &end);
+    scanf("%d", &end);
     printf("Geben Sie den Schrittwert ein:\n");
-    scanf_s("%d", &step);
+    scanf("%d", &step);
     grundlagen_programmierung_a2(start, end, step);
     return 0;
 }
