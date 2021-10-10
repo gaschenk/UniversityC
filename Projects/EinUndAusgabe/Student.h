@@ -3,6 +3,9 @@
 //
 #pragma once
 
+#include <stdio.h>
+#include <string.h>
+
 void getStringFromStdIn(char *outString) {
     char string[32];
     scanf_s("\n%[^\n]s", &string, 32);

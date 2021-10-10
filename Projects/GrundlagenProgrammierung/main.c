@@ -1,16 +1,4 @@
-#pragma once
-// CMakeList.txt:
-/*
-cmake_minimum_required(VERSION 3.21)
-project(GrundlagenProgrammierung C)
-
-set(CMAKE_C_STANDARD 23)
-
-add_executable(GrundlagenProgrammierung main.c)
- */
-#include <stdio.h>
-#include <math.h>
-#include "Player.h"
+#include "main.h"
 
 void grundlagen_programmierung_a1() {
     struct Player player1, player2;
