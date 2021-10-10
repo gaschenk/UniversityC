@@ -4,4 +4,4 @@ project(${EXECUTABLE_NAME} C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(${EXECUTABLE_NAME} main.c main.h)
+add_executable(${EXECUTABLE_NAME} main.c main.h VorlesungsInformation.h)
