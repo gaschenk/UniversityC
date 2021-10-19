@@ -34,7 +34,7 @@ int main() {
     printf("LS-Index: %d\n", linearSearch(array, x, 7));
 
     // epoch time stamps via #include <time.h>
-    struct VorlesungsInformation vorlesungsInformationen[6] = {
+    VorlesungsInformation vorlesungsInformationen[6] = {
             {1633938300, "Orientierungsmodul",           "Tullius",   "9-040 (176)"},
             {1634024700, "Informatik 1 Theorie",         "Schoeller", "9-040 (176)"},
             {1634031000, "Formale Methoden 1 Theorie",   "Himpel",    "9-040 (176)"},
@@ -43,9 +43,10 @@ int main() {
             {1634298300, "Informatik 1 Praktikum",       "Dolak",     "9-U12"},
     };
 
-    for (int i = 0; i < 6; ++i) {
+    // sizeof only works due to fixed array sizes.
+    for (int i = 0; i < (sizeof vorlesungsInformationen) / (sizeof(VorlesungsInformation)); ++i) {
         // use reference to save memory.
-        struct VorlesungsInformation *currentInformation = &vorlesungsInformationen[i];
+        VorlesungsInformation *currentInformation = &vorlesungsInformationen[i];
         // automatically appends new line...
         char *currentTime = asctime(localtime(&currentInformation->Uhrzeit));
         printf("Vorlesung: %s\nDatum: %sDozent: %s\nRaum: %s\n\n", currentInformation->VorlesungsBezeichnung,

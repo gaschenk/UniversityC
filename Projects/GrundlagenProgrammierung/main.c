@@ -9,10 +9,6 @@ void grundlagen_programmierung_a1() {
     printf("Es ist der 2. Spieler dran:\n");
     fillPlayerByInput(&player2);
 
-#ifdef __DEBUG
-    printf("1. Spieler: %s - %d\n",player1.Name,player1.Age);
-    printf("2. Spieler: %s - %d\n",player2.Name,player2.Age);
-#endif
     if (abs(player1.Age - player2.Age) > 10)
         printf("Es ist nur ein Trainingsspiel möglich\n");
     else
