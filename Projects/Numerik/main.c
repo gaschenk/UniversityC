@@ -64,14 +64,24 @@ int main() {
     puts(string);
     snprintf(string, 1024, "%lf\n", getRoot(4.0, 2.0));
     puts(string);
-    snprintf(string, 1024, "%lf\n", getRoot(8.0, 3.0));
-    puts(string);
-    snprintf(string, 1024, "%lf\n", getRoot(16.0, 4.0));
-    puts(string);
-    snprintf(string, 1024, "%lf\n", getRoot(9.0, 2.0));
-    puts(string);
-    snprintf(string, 1024, "%lf\n", getRoot(25.0, 2.0));
-    puts(string);
-    snprintf(string, 1024, "%lf\n", getRoot(100.0, 2.0));
-    puts(string);
+	snprintf(string, 1024, "%lf\n", getRoot(8.0, 3.0));
+	puts(string);
+	snprintf(string, 1024, "%lf\n", getRoot(16.0, 4.0));
+	puts(string);
+	snprintf(string, 1024, "%lf\n", getRoot(9.0, 2.0));
+	puts(string);
+	snprintf(string, 1024, "%lf\n", getRoot(25.0, 2.0));
+	puts(string);
+	snprintf(string, 1024, "%lf\n", getRoot(100.0, 2.0));
+	puts(string);
+	double z = 0.0f;
+	double n = 0.0f;
+	while (1) {
+		scanf("%lf", &z);
+		fflush(stdin);
+		scanf("%lf", &n);
+		fflush(stdin);
+		snprintf(string, 1024, "%lf\n", getRoot(z, n));
+		puts(string);
+	}
 }
